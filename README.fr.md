@@ -5,7 +5,7 @@
 **Un pipeline complet simulé de maintenance prédictive** — génération
 de données capteurs, détection d'anomalies et modélisation de RUL.
 
-[![CI](https://github.com/bindedouworker-hub/simulation-maintenance-predictive/actions/workflows/python-package.yml/badge.svg)](https://github.com/bindedouworker-hub/simulation-maintenance-predictive/actions/workflows/python-package.yml)
+[![CI](https://github.com/Mr-Jacks0n/simulation-maintenance-predictive/actions/workflows/python-package.yml/badge.svg)](https://github.com/Mr-Jacks0n/simulation-maintenance-predictive/actions/workflows/python-package.yml)
 [![Licence : MIT](https://img.shields.io/badge/licence-MIT-31c48d)](LICENSE)
 ![Python 3.10–3.12](https://img.shields.io/badge/Python-3.10%20%E2%80%93%203.12-3776ab)
 ![scikit-learn](https://img.shields.io/badge/Isolation%20Forest-scikit--learn-f89939)
@@ -108,7 +108,7 @@ python scripts/reliability_audit.py 200   # audit Monte-Carlo
 ## 🚀 Démarrage
 
 ```bash
-git clone https://github.com/bindedouworker-hub/simulation-maintenance-predictive.git
+git clone https://github.com/Mr-Jacks0n/simulation-maintenance-predictive.git
 cd simulation-maintenance-predictive
 
 python -m venv .venv && source .venv/bin/activate
