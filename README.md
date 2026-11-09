@@ -1,8 +1,8 @@
 <div align="center">
 
-<img src="docs/banner.png" alt="Banner — Hybrid Predictive Maintenance Simulation" width="100%"/>
+<img src="docs/banner.png" alt="Banner · Hybrid Predictive Maintenance Simulation" width="100%"/>
 
-**A simulated hybrid predictive-maintenance pipeline** — sensor data
+**A simulated hybrid predictive-maintenance pipeline** · sensor data
 generation, anomaly detection and RUL-prediction modeling.
 
 [![CI](https://github.com/Mr-Jacks0n/simulation-maintenance-predictive/actions/workflows/python-package.yml/badge.svg)](https://github.com/Mr-Jacks0n/simulation-maintenance-predictive/actions/workflows/python-package.yml)
@@ -13,7 +13,7 @@ generation, anomaly detection and RUL-prediction modeling.
 
 [English](README.md) · [Français](README.fr.md)
 
-*Personal research project — open to everyone, contributions welcome!*
+*Personal research project · open to everyone, contributions welcome!*
 
 </div>
 
@@ -25,16 +25,16 @@ This project simulates the **full data pipeline of a predictive-maintenance
 system** for IT / electronic equipment (CPU temperature, VCC voltage, fan
 speed):
 
-1. **Data generation** — synthetic sensor streams: healthy signal
+1. **Data generation** · synthetic sensor streams: healthy signal
    (daily cycle + Gaussian noise) with **injected faults** (drift, spikes)
-2. **Anomaly detection (unsupervised)** — `IsolationForest` flags
+2. **Anomaly detection (unsupervised)** · `IsolationForest` flags
    abnormal windows without any labeled data, upgraded with a
    **seasonal-residual stage** for persistent drifts (see Reliability)
-3. **Preprocessing for deep learning** — Min-Max normalization +
+3. **Preprocessing for deep learning** · Min-Max normalization +
    sliding-window sequences for time-series modeling
-4. **LSTM model (RUL)** — stacked `LSTM → LSTM → Dense` network
+4. **LSTM model (RUL)** · stacked `LSTM → LSTM → Dense` network
    estimating the **Remaining Useful Life** of the component
-5. **Evaluation** — confusion matrix, precision/recall/F1, with an eye
+5. **Evaluation** · confusion matrix, precision/recall/F1, with an eye
    on **false negatives** (missed failures = the costly mistakes)
 
 ## 🔬 Reliability & real-data validation
@@ -47,7 +47,7 @@ Signal + point-anomalies detected by the original Isolation Forest
 | Normal | 0.94 | 0.99 | 0.96 |
 | **Anomaly** | **0.84** | **0.42** | **0.56** |
 
-> 93% strict accuracy — but recall 0.42 on the anomaly: exactly the
+> 93% strict accuracy · but recall 0.42 on the anomaly: exactly the
 > kind of honest finding this project surfaces and then fixes.
 
 Because a detector whose results depend on the run is worthless, the
@@ -62,19 +62,19 @@ pipeline ships with a **Monte-Carlo reliability audit**
 Two structural findings from this audit, both documented in
 `results/reliability_report.txt`:
 
-1. **Isolation Forest alone plateaus (~0.44) on *persistent* drifts** —
+1. **Isolation Forest alone plateaus (~0.44) on *persistent* drifts** ·
    a shifted plateau is not made of isolated points, and
    `contamination=0.05` can flag at most 25 points out of 500 while the
    fault covers 50.
 2. The fix is a **hybrid detector**: IF keeps catching point anomalies,
    and a *seasonal residual* stage (`x[i] − x[i−P]`, period P estimated
-   by bounded autocorrelation) catches the drift — recall 1.0 from
+   by bounded autocorrelation) catches the drift · recall 1.0 from
    ~4× the noise σ, near-zero latency. The latched effect on the next
    cycle is why strict point-precision reads 0.55; in industrial terms
    those flags are correct.
 
 Reproducibility is guaranteed: all random draws are seeded
-(`seed=42` by default everywhere) — two runs produce byte-identical
+(`seed=42` by default everywhere) · two runs produce byte-identical
 results.
 
 ### Benchmark on NASA C-MAPSS FD001 (real domain data)
@@ -148,9 +148,9 @@ Outputs land in `results/` (CSV stream, text reports, `simulation_plot.png`).
 
 ## 🗺️ Roadmap
 
-- [x] ~~Raise anomaly recall~~ **done** — hybrid detector reaches 1.0
+- [x] ~~Raise anomaly recall~~ **done** · hybrid detector reaches 1.0
       point recall on persistent drifts (see Reliability)
-- [x] ~~Validate on real data~~ **done** — NASA C-MAPSS FD001:
+- [x] ~~Validate on real data~~ **done** · NASA C-MAPSS FD001:
       AUC-ROC 0.98 on hold-out engines
 - [ ] Real RUL training loop (`lstm_model.py` currently defines the architecture)
 - [ ] ROC-AUC / PR-AUC curves for threshold-free detection on synthetic data
@@ -159,12 +159,12 @@ Outputs land in `results/` (CSV stream, text reports, `simulation_plot.png`).
 
 ## 🤝 Contributing
 
-Everyone is welcome — this is an open study project! Please read
+Everyone is welcome · this is an open study project! Please read
 [CONTRIBUTING.md](CONTRIBUTING.md) (short). Open an issue or a PR.
 
 ## 📄 License
 
-[MIT](LICENSE) — free to use, modify and share.
+[MIT](LICENSE) · free to use, modify and share.
 
 ---
 

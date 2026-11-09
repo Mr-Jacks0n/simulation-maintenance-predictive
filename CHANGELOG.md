@@ -2,7 +2,7 @@
 
 Format inspiré de [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/).
 
-## [1.2.0] — 2026-11
+## [1.2.0] · 2026-11
 
 ### Added
 - **Audit de fiabilité scientifique** (`scripts/reliability_audit.py`)
@@ -30,7 +30,7 @@ Format inspiré de [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/).
   **AUC-ROC 0.984 · AUC-PR 0.923 · 20/20 moteurs détectés · alarme en
   moyenne 29 cycles avant la fin de vie**.
 
-## [1.1.0] — 2026-11
+## [1.1.0] · 2026-11
 
 ### Added
 - README bilingue (EN + FR) avec bannière et illustrations réelles
@@ -55,7 +55,7 @@ Format inspiré de [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/).
 - `package.json` (wrapper npm sans objet pour un projet Python).
 - `scripts/__pycache__/*.pyc` versionné.
 
-## [1.0.0] — 2026-11
+## [1.0.0] · 2026-11
 
 - Simulation initiale : génération de données capteurs, prétraitement,
   architecture LSTM (RUL), simulateur Isolation Forest, évaluation.
